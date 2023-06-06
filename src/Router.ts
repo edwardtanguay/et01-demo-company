@@ -1,5 +1,6 @@
 import * as tools from './tools';
 import { PageUeberuns } from './pages/PageUeberuns';
+import { PageBauherrenvertretung } from './pages/PageBauherrenvertretung';
 
 const pageNames = ['Über uns', 'Bauherrenvertretung', 'Projektleitung', 'Interims', 'Kundenprojekte', 'Kontakt'];
 
@@ -10,6 +11,8 @@ export const getCurrentPage = () => {
 		case '':
 		case 'ueberuns':
 			return PageUeberuns()
+		case 'bauherrenvertretung':
+			return PageBauherrenvertretung()
 		default:
 			return '404 Error';
 	}
