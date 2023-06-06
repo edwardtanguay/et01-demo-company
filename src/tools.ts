@@ -24,8 +24,13 @@ export const replaceAll = (text: string, search: string, replace: string) => {
 };
 
 export const cleanCharactersToAscii = (text: string) => {
-	if (text === 'Über uns') {
-		text = 'Ueberuns';
-	}
+	text = tools.replaceAll(text, 'Ü', 'ue');
+	text = tools.replaceAll(text, 'ü', 'ue');
+	text = tools.replaceAll(text, 'Ö', 'oe');
+	text = tools.replaceAll(text, 'ö', 'oe');
+	text = tools.replaceAll(text, 'Ä', 'oe');
+	text = tools.replaceAll(text, 'ä', 'oe');
+	text = tools.replaceAll(text, 'ß', 'ss');
+	text = tools.replaceAll(text, ' ', '');
 	return text;
 }

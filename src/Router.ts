@@ -1,8 +1,10 @@
 import * as tools from './tools';
 import { PageUeberuns } from './pages/PageUeberuns';
 import { PageBauherrenvertretung } from './pages/PageBauherrenvertretung';
+import { PageProjektleitung } from './pages/PageProjektleitung';
+import { PageInterims } from './pages/PageInterims';
 
-const pageNames = ['Über uns', 'Bauherrenvertretung', 'Projektleitung', 'Interims', 'Kundenprojekte', 'Kontakt', 'Öffnungszeiten'];
+const pageNames = ['Über uns', 'Bauherrenvertretung', 'Projektleitung', 'Interims', 'Kundenprojekte', 'Kontakt'];
 
 const currentPageIdCode = getSmartCurrentPageId();
 
@@ -13,6 +15,10 @@ export const getCurrentPage = () => {
 			return PageUeberuns()
 		case 'bauherrenvertretung':
 			return PageBauherrenvertretung()
+		case 'projektleitung':
+			return PageProjektleitung()
+		case 'interims':
+			return PageInterims()
 		default:
 			return '404 Error';
 	}
