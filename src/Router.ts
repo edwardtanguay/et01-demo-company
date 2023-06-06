@@ -2,7 +2,7 @@ import * as tools from './tools';
 import { PageUeberuns } from './pages/PageUeberuns';
 import { PageBauherrenvertretung } from './pages/PageBauherrenvertretung';
 
-const pageNames = ['Über uns', 'Bauherrenvertretung', 'Projektleitung', 'Interims', 'Kundenprojekte', 'Kontakt'];
+const pageNames = ['Über uns', 'Bauherrenvertretung', 'Projektleitung', 'Interims', 'Kundenprojekte', 'Kontakt', 'Öffnungszeiten'];
 
 const currentPageIdCode = getSmartCurrentPageId();
 
@@ -19,9 +19,7 @@ export const getCurrentPage = () => {
 }
 
 const getPageIdCode = (pageName: string) => {
-	if (pageName === 'Über uns') {
-		pageName = 'Ueberuns';
-	}
+	pageName = tools.cleanCharactersToAscii(pageName);
 	return pageName.toLowerCase();
 }
 

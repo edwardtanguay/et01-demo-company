@@ -22,3 +22,10 @@ export const getCurrentPageIdCode = () => {
 export const replaceAll = (text: string, search: string, replace: string) => {
 	return text.split(search).join(replace);
 };
+
+export const cleanCharactersToAscii = (text: string) => {
+	if (text === 'Über uns') {
+		text = 'Ueberuns';
+	}
+	return text;
+}
