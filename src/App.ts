@@ -2,11 +2,11 @@ import './styles/main.scss';
 import { getMenu, getCurrentPage } from './Router';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
-<header>
-	<h1>Info Site</h1>
-	<nav>
+    <header>
+        <img class="logo" src="image/cropped-kuehlmann_logo-removebg-preview.png"
+            alt=" logo von der Firma" />
 		${getMenu()}
-	</nav>
+	</header>
 </header>
 <main>
 	${getCurrentPage()}

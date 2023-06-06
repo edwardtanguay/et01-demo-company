@@ -1,24 +1,25 @@
 import * as tools from './tools';
-import { PageWelcome } from './pages/PageWelcome';
-import { PageInfo } from './pages/PageInfo';
-import { PageAbout } from './pages/PageAbout';
+import { PageUeberuns } from './pages/PageUeberuns';
 
-const pageNames = ['Welcome', 'Info', 'About'];
+const pageNames = ['Über uns', 'Bauherrenvertretung', 'Projektleitung', 'Interims', 'Kundenprojekte', 'Kontakt'];
 
 const currentPageIdCode = getSmartCurrentPageId();
 
 export const getCurrentPage = () => {
 	switch (currentPageIdCode) {
 		case '':
-		case 'welcome':
-			return PageWelcome();
-		case 'info':
-			return PageInfo();
-		case 'about':
-			return PageAbout();
+		case 'ueberuns':
+			return PageUeberuns()
 		default:
 			return '404 Error';
 	}
+}
+
+const getPageIdCode = (pageName: string) => {
+	if (pageName === 'Über uns') {
+		pageName = 'Ueberuns';
+	}
+	return pageName.toLowerCase();
 }
 
 export const getMenu = () => {
@@ -32,11 +33,14 @@ export const getMenu = () => {
 	}
 
 	return /*html*/`
-	<ul>
-		${pageNames.map(pageName => `<li><a href="${pageName.toLowerCase()}"${getMenuClass(pageName)}>${pageName}</a></li>`).join('')}
-	</ul>
+	<nav>
+		<ul>
+			${pageNames.map(pageName => `<li><a href="${getPageIdCode(pageName)}"${getMenuClass(pageName)}>${pageName}</a></li>`).join('')}
+		</ul>
+	</nav>
 `;
 }
+
 
 function getSmartCurrentPageId() {
 	let currentPageIdCode = tools.getCurrentPageIdCode();

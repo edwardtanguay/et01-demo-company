@@ -7,5 +7,18 @@ export const getCurrentUrl = () => {
 export const getCurrentPageIdCode = () => {
 	const url = tools.getCurrentUrl();
 	const parts = url.split('/');
-	return parts[parts.length - 1];
+	let part = parts[parts.length - 1];
+	part = tools.replaceAll(part, ' ', '');
+	return part;
 }
+
+/**
+ * REPLACE ALL OCCURANCES IN A STRING:
+ *
+ * qstr.replaceAll("This is a tost.", "o", "e");
+ *
+ * "This is a test."
+ */
+export const replaceAll = (text: string, search: string, replace: string) => {
+	return text.split(search).join(replace);
+};
