@@ -1,5 +1,7 @@
 export const PageBauherrenvertretung = () => {
 	return /*html*/`
-	<p>page bauherrenvertretung</p>
+	<div class="page pageBauherrenvertretung">
+		<p>page bauherrenvertretung</p>
+	</div>
 `; 
 }

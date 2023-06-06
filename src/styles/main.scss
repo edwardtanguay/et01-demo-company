@@ -80,25 +80,6 @@ p {
 	color: gray;
 }
 
-.hero {
-	gap: 3vw;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-}
-
-.hero-inner {
-	display: flex;
-	justify-content: end;
-	width: 100%;
-
-}
-
-.hero-inner img {
-	border-radius: 12px;
-}
-
-
 main {
 	margin: 40px;
 }
@@ -146,10 +127,36 @@ footer p {
 	color: var(--red);
 }
 
-.welcome h1 {
-	color: var(--red);
+
+.pageUeberuns {
+	.welcome h1 {
+		color: var(--red);
+	}
+
+	.welcome p {
+		color: #d1d5db;
+	}
+
+	.hero {
+		gap: 3vw;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.hero-inner {
+		display: flex;
+		justify-content: end;
+		width: 100%;
+	}
+
+	.hero-inner img {
+		border-radius: 12px;
+	}
 }
 
-.welcome p {
-	color: #d1d5db;
+.pageBauherrenvertretung {
+	p {
+		
+	}
 }
